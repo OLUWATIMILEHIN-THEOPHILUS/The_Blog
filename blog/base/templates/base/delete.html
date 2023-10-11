@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DyingMinuteGoal --- latest football updates</title>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="signin-nav-bar">
+        <h3><a href="{% url 'home' %}">DyingMinuteGoal</a></h3>
+    </div>
+
+    <li class="back-button">
+        <h2><a href="{{request.META.HTTP_REFERER}}"> &#8617; </a> </h2>
+    </li>
+    <br>
+    <div class="form-container">
+        <div class="form-item">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="question">
+                    <p>Are you sure you want to delete {{obj}}?</p>
+                </div>
+                <div class="form-button">
+                    <li class="form-button-list">
+                        <h2 class="back-button"><a href="{{request.META.HTTP_REFERER}}">&#8617;</a></h2>
+                    </li>
+                    <li class="form-button-list">
+                        <input type="submit" value="&#10540;">
+                    </li>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

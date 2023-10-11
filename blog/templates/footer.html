@@ -1,0 +1,41 @@
+{% load static %}
+{% block content %}
+
+
+<div class="footer">
+
+    <div class="footer-about">
+        <li class="footer-item">
+            <h2><a href="{% url 'about' %}"> &#9750; </a></h2>
+        </li>
+    </div>
+    <div class="footer-contact">
+        <li id="x" class="contact-item">
+            <a href="http://x.com/@timielnino"><img src="{% static 'images/x.png' %}" alt="x logo"
+                    class="contact-icon"></a>
+        </li>
+
+        <li id="github" class="contact-item">
+            <a href="https://github.com/OLUWATIMILEHIN-THEOPHILUS"><img src="{% static 'images/github.png' %}"
+                    alt="github logo" class="contact-icon"></a>
+        </li>
+
+        <li id="email" class="contact-item">
+            <a href="mailto:timiomotayo@yahoo.com"><img src="{% static 'images/mail.png' %}" alt="email logo"
+                    class="contact-icon"></a>
+        </li>
+
+        <li id="whatsapp" class="contact-item">
+            <a href="https://wa.me/+2347066925176"><img src="{% static 'images/whatsapp.jpg' %}" alt="whatsapp logo"
+                    class="contact-icon"></a>
+        </li>
+        <li id="linkedin" class="contact-item">
+            <a href="https://www.linkedin.com/in/omotayo-oluwatimilehin/"><img src="{% static 'images/linkedin.png' %}"
+                    alt="linkedin logo" class="contact-icon"></a>
+        </li>
+        <p> &copy; 2023 Oladipupo. </p>
+    </div>
+
+</div>
+
+{% endblock content %}

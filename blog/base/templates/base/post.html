@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DyingMinuteGoal --- latest football updates</title>
+</head>
+
+<body>
+    <div class="top">
+        {% include 'header.html' %}
+        <div class="post-nav-bar">
+            <h3><a href="{% url 'home' %}">DyingMinuteGoal</a></h3>
+            <li class="back-button">
+                <h2><a href="{{request.META.HTTP_REFERER}}"> &#8617; </a> </h2>
+            </li>
+        </div>
+    </div>
+
+
+    {% block content %}
+
+    <div class="post-container">
+
+        <div class="post">
+            <div class="post-item">
+                <li class="post-item-list">
+                    {% if post.image %}
+                    <a href="{{post.image.url}}">
+                        <img class="post-pix" src="{{post.image.url}}">
+                    </a>
+                    {% else %}
+                    <p class="no-image">No image or avatar available!</p>
+                    {% endif %}
+                </li>
+
+                <li class="post-item-list">
+                    {% if request.user == post.writer %}
+                    <h2 class="delete-post-button"><a href="{% url 'delete-post' post.id %}">&#x2716;</a></h2>
+                    <h2 class="edit-post-button"><a href="{% url 'edit-post' post.id %}">&#x270E;</a></h2>
+                    {% endif %}
+                </li>
+            </div>
+
+            <div id="post-detail" class="post-item">
+                <div class="post-detail-div">
+                    <p> {{post.detail}} </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment">
+
+            <h3>&#9997;; </h3>
+
+            <div class="comment-item">
+                {% for comment in comments %}
+                <div class="comment-item">
+                    <li class="comment-item-list">
+                        <p> {{comment.body}} ---- <a href="#">@{{comment.user.username}}</a></p>
+                        <small>{{comment.sent}}</small>
+                    </li>
+                    {% if request.user == comment.user %}
+                    <!-- <li class="comment-items">         ----edit comment button 
+                    <a class="delete-button">&#x270E;</a>
+                </li> -->
+                    <li class="comment-item-list">
+                        <form method="POST" action="{% url 'delete-comment' comment.id %}">
+                            {% csrf_token %}
+                            <input class="delete-comment-button" type="submit" value="&#10540;">
+                        </form>
+                    </li>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+
+
+                <div id="comment-box" class="comment-item">
+                    <li class="comment-box-list">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <input class="comment-box-box" type="text" name="body"
+                                placeholder="write your comment here....">
+                        </form>
+                    </li>
+                    <li class="comment-box-list">
+                        <span class="comment-smiley">&#9997;</span>
+                    </li>
+                </div>
+                <br>
+                <span class="comment-span"> | {{n_comment}} comment{{ n_comment|pluralize:"s" }}</span>
+            </div>
+        </div>
+
+        <div class="caption">
+            <div class="caption-item">
+                <h5> This post you just read was posted by: @{{post.writer.username}}</h5>
+            </div>
+            <div class="caption-item">
+                <span> Posted since: {{post.posted|timesince}} ago </span>
+            </div>
+        </div>
+
+        {% endblock content %}
+        {% include 'footer.html' %}
+
+</body>
+
+</html>

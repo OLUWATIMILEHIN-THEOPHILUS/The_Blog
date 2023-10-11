@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>DyingMinuteGoal --- latest football updates</title>
+
+</head>
+
+<body>
+    <div class="top">
+        {% include 'navbar.html' %}
+        {% include 'header.html' %}
+    </div>
+    {% block content %}
+
+
+    <div class="home-container">
+
+        <div class="home-top">
+            <div class="home-top-item">
+
+                {% if request.user.is_superuser %}
+                <li id="new-post" class="home-top-list">
+                    <h4><a href="{% url 'create-post' %}">&#43; new post</a></h4>
+                </li>
+                {% endif %}
+
+                <li id="search" class="home-top-list">
+                    <form method="GET" action="">
+                        <input class="search-item-button" type="text" name="q" placeholder="search post ...">
+                        <input class="search-item-button" type="submit" value="&#9740;">
+                    </form>
+                </li>
+                <div id="n_post" class="home-top-item">
+                    <span>{{n_post}} post{{ n_post| pluralize:"s" }} available</span>
+                </div>
+            </div>
+        </div>
+
+
+        {% for post in posts %}
+        <br>
+        <div class="post-container">
+            <div class="post">
+                <div class="post-item">
+                    <li class="post-item-list">
+                        <h4> Posted by: {{post.writer.username | capfirst}} </h4>
+                    </li>
+                    <li class="post-item-list">
+                        <a href="{{post.writer.avatar.url}}">
+                            <img class="avatar" src="{{post.writer.avatar.url}}"></a>
+                    </li>
+                </div>
+                <div class="post-item">
+                    <li class="post-item-list">
+                        <h3> {{post.heading}} ...... </h3>
+                    </li>
+                    <li class="post-item-list">
+                        <span> Posted since: {{post.posted|timesince}} ago </span>
+                    </li>
+                </div>
+                <div class="post-item">
+                    {% if post.image %}
+                    <img class="post-pix" src="{{post.image.url}}">
+                    {% else %}
+                    <p class="no-image">No image or avatar available!</p>
+                    {% endif %}
+                </div>
+                <div id="post-detail" class="post-item">
+                    <div class="post-detail-div">
+                        <p> {{post.detail|truncatewords:50}} ........ </p>
+                    </div>
+                    <div class="post-detail-n_comment">
+                        <span> | {{post.n_comment}} comment{{ post.n_comment|pluralize:",s" }} made on this post</span>
+                        <h5><a href="{% url 'post' post.id %}"> Read Post &#8618;</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock content %}
+    {% include 'footer.html' %}
+</body>
+
+</html>

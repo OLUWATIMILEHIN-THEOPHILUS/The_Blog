@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DyingMinuteGoal --- latest football updates</title>
+</head>
+
+<body>
+    <div class="top">
+        {% include 'header.html' %}
+
+        <div class="about-nav-bar">
+            <h3><a href="{% url 'home' %}">DyingMinuteGoal</a></h3>
+        </div>
+
+        <li class="back-button">
+            <h2><a href="{{request.META.HTTP_REFERER}}"> &#8617; </a> </h2>
+        </li>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-name">
+            <h3>Oladipupo</h3>
+        </div>
+        <div id="about-pix" class="about-item">
+            <a><img src="{% static 'images/about-pix.jpg' %}"></a>
+        </div>
+        <div id="about-text" class="about-item">
+            <p>A self-taught, result oriented Python/Django developer who has an aptitude for technology and loves
+                solving problems.</p>
+            <p>Just in case you have any job offer for me, you can contact me through any of the links below.</p>
+        </div>
+
+        <div id="about-contact" class="about-item">
+            <ul class="contact-info">
+                <li class="x"><a href="http://x.com/intent/tweet?screen_name=timielnino">@timielnino</a>
+                <li class="github"><a href="https://github.com/OLUWATIMILEHIN-THEOPHILUS">Oluwatimilehin</a></li>
+                <li class="mail"><a href="mailto:timiomotayo@yahoo.com">timiomotayo@yahoo.com</a></li>
+                <li class="whatsapp"><a href="https://wa.me/+2347066925176">+234 706 692 5176</a></li>
+                <li class="linkedin"><a href="https://www.linkedin.com/in/omotayo-oluwatimilehin/">Oluwatimilehin
+                        Omotayo</a></li>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

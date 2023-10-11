@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DyingMinuteGoal --- latest football updates</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+
+<body>
+    {% block content %}
+
+    <div class="header-container">
+        <div class="header">
+
+            <li class="header-items">
+                <h2><a href="{% url 'home' %}"> &#9750; </a></h2>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li class="header-items">
+                <h3><a href="{% url 'sign_out' %}">sign out</a></h3>
+            </li>
+            {% else %}
+            {% if page != 'sign_in' and page != 'sign_up' %}
+            <li class="header-items">
+                <h3><a href="{% url 'sign_in' %}">sign in</a></h3>
+            </li>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+    {% endblock content %}
+
+</body>
+
+</html>

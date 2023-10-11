@@ -1,0 +1,376 @@
+/****************************
+GENERAL
+*****************************/
+
+body {
+    text-decoration: none;
+    list-style: none;
+    background: #153b47;
+}
+
+a {
+    text-decoration: none;
+    color: #c3bcc2;
+}
+
+.avatar {
+    max-width: 50px;
+    border-radius: 100%;
+    border: #c3bcc2 2px solid;
+}
+
+.no-image {
+    color:  magenta;
+    font-weight: bold;
+}
+
+.top {
+    border-bottom: #c3bcc2 5px solid;
+    border-top: #c3bcc2 5px solid;
+}
+
+.flash-messages {
+    color: magenta;
+    text-align: center;
+    font-weight: bold;
+}
+
+.messages li {
+    list-style: none;
+}
+
+
+/****************************
+NAVBAR
+*****************************/
+
+.nav-bar-container {
+    float: left;
+    margin: 10px 0px 0px 10px;
+    padding: 2px 4px;
+}
+
+
+.nav-bar-item-list {
+    text-align: center;
+    color: mediumseagreen;
+}
+
+
+.nav-bar-item-list .avatar {
+    text-align: center;
+}
+
+
+
+/****************************
+HEADER
+*****************************/
+
+.header-container {
+    float: right;
+    margin: 10px 10px 0px 0px;
+    padding: 2px 4px;
+}
+
+.header-items {
+    text-align: center;
+}
+
+
+
+/****************************
+FOOTER
+*****************************/
+
+.contact-item img {
+    max-width: 20px;
+}
+
+.footer {
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.footer-about {
+    text-align: center;
+}
+
+
+.footer-contact {
+    text-align: center;
+    color: mediumseagreen;
+}
+
+.contact-item {
+    display: inline-block;
+    margin: 2px 3px;
+}
+
+
+
+/****************************
+HOME PAGE
+*****************************/
+.home-top {
+    color: #c3bcc2;
+    padding: 10px 1px 40px 1px;
+}
+
+.home-top a {
+    color: mediumseagreen;
+}
+
+.home-top-item {
+    text-align: center;
+    padding: 2px 2px;
+    margin: 2px 2px;
+}
+
+.home-top-list {
+    padding: 2px 2px;
+    margin: 2px 2px;
+}
+
+
+/****************************
+HOME PAGE: POSTS
+*****************************/
+
+#n_post {
+    font-weight: bolder;
+    font-style: oblique;
+}
+
+.post-container {
+    border-top: #c3bcc2 5px solid;
+    padding: 5px 10px;
+    max-width: 680px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.post-pix {
+    margin-top: 8px;
+    width: 300px;
+    height: 300px;
+    border: #c3bcc2 5px solid;
+}
+
+.post-detail-div {
+    text-align: start;
+    color: mediumseagreen;
+    font-weight: bold;
+}
+
+.post-detail-n_comment, .post-detail-n_comment a {
+    font-style: oblique;
+}
+
+.post-nav-bar,
+.back-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 15px;
+}
+
+
+.post-item-list h3 {
+    color: mediumseagreen;
+}
+
+.post-item-list h4, span {
+    color:  #c3bcc2;
+}
+
+.post-item-list span {
+    color:  #c3bcc2;
+    font-style: oblique;
+}
+
+
+/****************************
+POST PAGE: COMMENT
+*****************************/
+
+.comment {
+    text-align: start;
+    margin-top: 50px;
+}
+
+.caption {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-style: oblique;
+}
+
+
+#comment-box {
+    margin: 20px 0px 5px 5px;
+}
+
+.comment-span {
+    font-style: oblique;
+}
+
+.comment-box-list {
+    display: inline-block;
+}
+
+.comment-item-list {
+    display: inline-block;
+}
+
+.comment-item-list p {
+    color: mediumseagreen;
+    font-style: oblique;
+}
+
+.delete-comment-button {
+    font-size: 0.253em;
+    background: red;
+}
+
+
+
+/****************************
+SIGN IN | SIGN UP
+*****************************/
+
+.signin-nav-bar, .back-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 15px;
+}
+
+.form-container {
+    text-align: center;
+    padding: 5px 15px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    background: #30535f;
+    border: #c3bcc2 5px solid;
+}
+
+.form {
+    padding: 20px 10px;
+}
+
+.form-field {
+    text-align: start;
+    margin: 8px 4px;
+    padding: 4px 2px;
+    color: mediumseagreen;
+    font-weight: bold;
+}
+
+.question {
+    font-weight: bold;
+}
+
+
+
+
+.create-post-nav-bar, 
+.back-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 15px;
+}
+
+
+.form-item {
+    padding: 20px 5px;
+}
+
+
+.form-button-list {
+    display: inline-block;
+    margin: 1px 50px 1px 50px;
+}
+
+
+/****************************
+ABOUT PAGE
+*****************************/
+
+#about-pix img {
+   max-width: 200px; 
+   border-radius: 35%;
+   border: #c3bcc2 5px solid;
+}
+
+.about-nav-bar,
+.back-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 15px;
+}
+
+
+.about-container {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+#about-text, 
+#about-contact {
+    text-align: start;
+    margin: auto;
+    color: mediumseagreen;
+    font-style: oblique;
+}
+
+.about-name {
+    color: #c3bcc2;
+    font-weight: bold;
+}
+
+.contact-info {
+    list-style: none;
+}
+
+.contact-info a {
+    display: inline;
+    min-height: 20px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding: 0 0 0 30px;
+    margin: 0 0 10px;
+}
+
+.contact-info li {
+    margin: 5px 1px;
+}
+
+.contact-info li.x a {
+    background-image: url(../images/x.png);
+    background-repeat: no-repeat;
+}
+
+.contact-info li.github a {
+    background-image: url(../images/github.png);
+    background-repeat: no-repeat;
+}
+
+.contact-info li.mail a {
+    background-image: url(../images/mail.png);
+    background-repeat: no-repeat;
+}
+
+.contact-info li.whatsapp a {
+    background-image: url(../images/whatsapp.jpg);
+    background-repeat: no-repeat;
+}
+
+.contact-info li.linkedin a {
+    background-image: url(../images/linkedin.png);
+    background-repeat: no-repeat;
+}
+
+.contact-info img {
+    max-width: 100%;
+}
